@@ -11,6 +11,8 @@ const Comments = ({ taskId }) => {
         const fetchComments = async () => {
             try {
                 const response = await axios.get(`/api/tasks/${taskId}/comments`);
+                console.log(response.data);
+                
                 setComments(response.data);
             } catch (error) {
                 console.error('Error fetching comments:', error);
@@ -38,8 +40,8 @@ const Comments = ({ taskId }) => {
             <ul>
                 {comments.map((comment) => (
                     <li key={comment._id}>
-                        <p>{comment.text}</p> {/* Render comment text */}
-                        <small>By {comment.user?.name || 'Unknown'} on {new Date(comment.timestamp).toLocaleString()}</small>
+                        <p>{comment.text}</p>
+                        <small>By {comment.user?.username || 'Unknown'} on {new Date(comment.timestamp).toLocaleString()}</small>
                     </li>
                 ))}
             </ul>

@@ -85,7 +85,8 @@ router.post('/:taskId/comments', async (req, res) => {
         const task = await Task.findById(taskId);
         task.comments.push({ text, user: userId });
         await task.save();
-
+        console.log(task);
+        
         res.status(201).json(task.comments);
     } catch (error) {
         res.status(500).json({ message: 'Error adding comment', error });
@@ -96,12 +97,15 @@ router.post('/:taskId/comments', async (req, res) => {
 router.get('/:taskId/comments', async (req, res) => {
     try {
         const { taskId } = req.params;
-        const task = await Task.findById(taskId).populate('comments.user', 'name');
+        // Populate the user field in each comment to include the user's name
+        const task = await Task.findById(taskId).populate('comments.user', 'username');
+        
         res.json(task.comments);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching comments', error });
     }
 });
+
 
 // Assign task to a user
 router.put('/:id/assign', async (req, res) => {

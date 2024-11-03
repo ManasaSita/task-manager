@@ -4,6 +4,8 @@ import axios from 'axios';
 import Comments from './Comments';
 
 const TaskDetails = ({ task }) => {
+    console.log(task);
+    
     const [comments, setComments] = useState([]);
     const [currentTask, setCurrentTask] = useState(task);
     const [taskData, setTaskData] = useState({

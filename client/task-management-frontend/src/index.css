@@ -1,5 +1,5 @@
 /* src/pages/Login.css */
-.login-container {
+.login-container, .register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,14 +8,14 @@
   background-color: #8645b1;
 }
 
-.login-container h2 {
+.login-container h2, .register-container h2 {
   font-size: 24px;
   color: white;
   margin-bottom: 20px;
   text-shadow: 7px 9px 6px black;
 }
 
-.login-container form {
+.login-container form, .register-container form {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -25,13 +25,14 @@
   box-shadow: 10px 20px 8px rgba(0, 0, 0, 0.5);
 }
 
-.login-container label {
+.login-container label, .register-container label {
   font-size: 14px;
   color: #666;
   margin-bottom: 5px;
 }
 
 .login-container input[type="text"],
+.login-container input[type="email"],
 .login-container input[type="password"] {
   width: 100%;
   padding: 10px;
@@ -43,14 +44,36 @@
   box-sizing: border-box;
 }
 
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+}
+
 .login-container input[type="text"]:focus,
+.login-container input[type="email"]:focus,
 .login-container input[type="password"]:focus {
   border-color: #8645b1;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
-.login-container button {
+.register-container input[type="text"]:focus,
+.register-container input[type="email"]:focus,
+.register-container input[type="password"]:focus {
+  border-color: #8645b1;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.login-container button, .register-container button {
   padding: 10px;
   font-size: 16px;
   background-color: black;
@@ -61,11 +84,11 @@
   transition: background-color 0.3s;
 }
 
-.login-container button:hover {
+.login-container button:hover, .register-container button:hover {
   background-color: #8645b1;
 }
 
-.login-container p {
+.login-container p, .register-container p {
   font-size: 14px;
   color: red;
   margin-top: 10px;
