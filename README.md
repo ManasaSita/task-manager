@@ -91,26 +91,51 @@ The backend server will be running on `http://localhost:5000`, and the frontend 
 
 ```
 task-manager/
-│
-├── controllers/     # Controllers for handling API requests
-│   ├── authController.js
-│   ├── taskController.js
-│
-├── models/         # Mongoose models for MongoDB collections
-│   ├── User.js
-│   ├── Task.js
-│
-├── routes/         # Route definitions
-│   ├── authRoutes.js
-│   ├── taskRoutes.js
-│
-├── middleware/     # Middleware functions
-│   └── authMiddleware.js
-│
-├── config/         # Config files
-│   └── db.js
-│
-└── app.js         # Main server file
+├── backend/task-manager-backend/
+   ├── controllers/     # Controllers for handling API requests
+   │   ├── authController.js
+   │   ├── taskController.js
+   │
+   ├── models/         # Mongoose models for MongoDB collections
+   │   ├── User.js
+   │   ├── Task.js
+   │
+   ├── routes/         # Route definitions
+   │   ├── authRoutes.js
+   │   ├── taskRoutes.js
+   │
+   ├── middleware/     # Middleware functions
+   │   └── authMiddleware.js
+   │
+   ├── config/         # Config files
+   │   └── db.js
+   │
+   ├── .env
+   |
+   └── app.js         # Main server file
+
+├──client/task-management-frontend/
+   ├── src/
+   |   ├── components/
+   |   |   ├── Components.js
+   |   |   ├── TaskDetails.js
+   |   |   ├── TaskFilter.js
+   |   |   ├── TaskForm.js
+   |   |   └── TaskList.js
+   |
+   |   ├── context/
+   |   |   ├── AuthContetxt.js
+   |   |   └── AuthProvider.js
+   |
+   |   ├── pages/
+   |   |   ├── Dashboard.js
+   |   |   ├── Login.js
+   |   |   └── Register.js
+   |
+   ├── App.js
+   ├── index.html
+   └── index.css
+
 ```
 
 ## Future Enhancements
