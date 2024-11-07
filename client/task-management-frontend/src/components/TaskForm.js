@@ -29,6 +29,7 @@ const TaskForm = ({ onSubmit,users, initialData = {} }) => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <label>Title</label>
             <input
                 type="text"
                 name="name"
@@ -37,13 +38,16 @@ const TaskForm = ({ onSubmit,users, initialData = {} }) => {
                 placeholder="Task Name"
                 required
             />
+            <label>Description:</label>
             <textarea
                 name="description"
                 value={taskData.description}
                 onChange={handleChange}
                 placeholder="Description"
             />
+            <label>Due Date:</label>
             <input type="date" name="dueDate" value={taskData.dueDate} onChange={handleChange} />
+            <label>Status:</label>
             <select name="status" value={taskData.status} onChange={handleChange}>
                 <option value="Pending">Pending</option>
                 <option value="In Progress">In Progress</option>
@@ -57,6 +61,7 @@ const TaskForm = ({ onSubmit,users, initialData = {} }) => {
                     </option>
                 ))}
             </select> */}
+            <label>Priority:</label>
             <select name="priority" value={taskData.priority} onChange={handleChange}>
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>

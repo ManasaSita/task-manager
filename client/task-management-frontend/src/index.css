@@ -157,13 +157,19 @@ form {
 }
 
 input[type="text"],
-textarea,
-select,
-input[type="date"] {
+textarea {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
   width: 100%;
+  font-size: 14px;
+}
+
+input[type="date"], select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 17%;
   font-size: 14px;
 }
 

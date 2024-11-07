@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema({
     dueDate: Date,
     status: String,
     priority: String,
-    assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // For assigning tasks
+    assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     comments: [
         {
             text: String,
