@@ -8,7 +8,7 @@ const TaskFilter = ({ setFilteredTasks }) => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await axios.get('/api/tasks');
+                const response = await axios.get('https://task-manager-backend-86ss.onrender.com/api/tasks');
                 setFilteredTasks(response.data);
             } catch (error) {
                 console.error('Error fetching tasks:', error);
@@ -21,7 +21,7 @@ const TaskFilter = ({ setFilteredTasks }) => {
 
     const applyFilters = async () => {
         try {
-            const response = await axios.get('/api/tasks/filter', { params: filters });
+            const response = await axios.get('https://task-manager-backend-86ss.onrender.com/api/tasks/filter', { params: filters });
             setFilteredTasks(response.data);  // Update filtered tasks in Dashboard
         } catch (error) {
             console.error('Error applying filters:', error);

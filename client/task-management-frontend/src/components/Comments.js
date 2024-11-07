@@ -10,7 +10,7 @@ const Comments = ({ taskId }) => {
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await axios.get(`/api/tasks/${taskId}/comments`);
+                const response = await axios.get(`https://task-manager-backend-86ss.onrender.com/api/tasks/${taskId}/comments`);
                 console.log(response.data);
                 
                 setComments(response.data);
@@ -23,7 +23,7 @@ const Comments = ({ taskId }) => {
 
     const handleAddComment = async () => {
         try {
-            const response = await axios.post(`/api/tasks/${taskId}/comments`, {
+            const response = await axios.post(`https://task-manager-backend-86ss.onrender.com/api/tasks/${taskId}/comments`, {
                 text: newComment,
                 userId: user.userId,
             });

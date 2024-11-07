@@ -34,7 +34,7 @@ const TaskDetails = ({ task }) => {
     const handleStatusUpdate = async (status) => {
         try {
             const id = currentTask._id;
-            const response = await axios.put(`/api/tasks/${id}`, { status });
+            const response = await axios.put(`https://task-manager-backend-86ss.onrender.com/api/tasks/${id}`, { status });
             console.log(response.data);
 
             setCurrentTask((prevTask) => ({ ...prevTask, status: response.data.status }));
@@ -56,7 +56,7 @@ const TaskDetails = ({ task }) => {
         e.preventDefault();
         try {
             const id = currentTask._id;
-            const response = await axios.put(`/api/tasks/${id}`, taskData);
+            const response = await axios.put(`https://task-manager-backend-86ss.onrender.com/api/tasks/${id}`, taskData);
             console.log('Task updated:', response.data);
             setCurrentTask(response.data);
             // Optionally reset the form after submission

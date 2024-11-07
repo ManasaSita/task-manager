@@ -19,7 +19,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await axios.get('/api/tasks');
+                const response = await axios.get('https://task-manager-backend-86ss.onrender.com/api/tasks');
                 setTasks(response.data);
                 setFilteredTasks(response.data);
             } catch (error) {
@@ -28,7 +28,7 @@ const Dashboard = () => {
         };
 
         const fetchUsers = async () => {
-            const response = await axios.get('/api/auth/users');
+            const response = await axios.get('https://task-manager-backend-86ss.onrender.com/api/auth/users');
             setUsers(response.data);
         };
 
@@ -38,7 +38,7 @@ const Dashboard = () => {
 
     const addTask = async (taskData) => {
         try {
-            const response = await axios.post('/api/tasks/create', taskData);
+            const response = await axios.post('https://task-manager-backend-86ss.onrender.com/api/tasks/create', taskData);
             const newTask = response.data;
             const updatedTasks = [newTask, ...tasks];
             setTasks(updatedTasks);
