@@ -24,7 +24,7 @@ A full-stack Task Management Application built with Node.js, Express, and MongoD
 
 ## Tech Stack
 
-- **Frontend**: React (or replace with your front-end framework)
+- **Frontend**: React.js
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
